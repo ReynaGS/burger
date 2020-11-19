@@ -1,13 +1,27 @@
+//wait for the dom to load
 $(document).ready(function () {
-    // console.log("probando ready")
+
     // link submit button
-    // add event to submit
-    // link textbox to take burger data
-    // call API to send burger data
     var submitButton = $("#submit-button")
+
+    // link textbox to take burger data
     var textBox = $("#text-input")
+
+    // add event to submit
     submitButton.on("click", function () {
-        console.log("clicked")
+
+        postData(textBox.val());
     })
 
-});     
+
+});
+// use input text and send it to api
+async function postData(burgerName) {
+    console.log(burgerName);
+    const response = await $.post("/api/addburger", { "burgerName": burgerName })
+    console.log(response);
+
+    // TODO
+    // call API to send burger data
+
+}
