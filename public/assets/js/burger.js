@@ -18,10 +18,12 @@ $(document).ready(function () {
 // use input text and send it to api
 async function postData(burgerName) {
     console.log(burgerName);
+    // call API to send burger data
     const response = await $.post("/api/addburger", { "burgerName": burgerName })
     console.log(response);
+    location.reload();
 
-    // TODO
-    // call API to send burger data
+
+
 
 }
