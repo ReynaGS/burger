@@ -23,4 +23,13 @@ router.post("/api/addburger", function (req, res) {
 
 })
 
+router.post("/api/devouredburger", function (req, res) {
+  var condition = "id = " + req.body.id;
+  console.log(req.body)
+  burger.update({
+    devoured: true
+  },
+    condition, function (result) { res.send("ok") })
+})
+
 module.exports = router;

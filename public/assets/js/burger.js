@@ -12,6 +12,14 @@ $(document).ready(function () {
 
         postData(textBox.val());
     })
+    var devourButtons = $(".btn-sm")
+    devourButtons.on("click", function (evt) {
+        console.log(evt);
+        var id = evt.target.id;
+        moveToDevoured(id)
+
+    })
+
 
 
 });
@@ -23,7 +31,11 @@ async function postData(burgerName) {
     console.log(response);
     location.reload();
 
+}
 
-
+async function moveToDevoured(id) {
+    const response = await $.post("/api/devouredburger", { "id": id })
+    console.log(response);
+    location.reload();
 
 }

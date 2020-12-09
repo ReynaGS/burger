@@ -35,7 +35,9 @@
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
-                <li> {{burger_name}}</li>
+                <li style="margin:18px;"> <span style="font-size:22px;"> {{burger_name}} </span> <button type="button"
+                        id={{id}} class="btn btn-sm" style="background-color: rgb(128, 211, 250);">Devour</button>
+                </li>
                 {{/unless}}
                 {{/each}}
             </ul>
@@ -46,7 +48,7 @@
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
-                <li> {{burger_name}}</li>
+                <li style="margin:18px"> <span style="font-size: 22px;"> {{burger_name}}</span></li>
                 {{/if}}
                 {{/each}}
             </ul>
